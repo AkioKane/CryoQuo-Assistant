@@ -20,7 +20,8 @@
 
 .text-header {
     color: white;
-    font-size: 36px;
+    font-size: 48px;
+    font-weight: 400;
 }
 
 .buttons {
@@ -32,5 +33,83 @@
 .download-btn {
     display: flex;
     padding: 10px 30px;
-    border-radius: 5px;
+    border-radius: 50px;
+    transition: transform 0.2s ease;
+    border: none;
+    font-weight: 500;
+    background-color: rgb(255, 255, 255);
+}
+
+.download-btn:hover {
+    transform: scale(1.1);
+}
+
+.download-btn:active {
+    transform: scale(1.25);
+} */
+
+
+.download-btn:link,
+.download-btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: absolute;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn {
+    background-color: #fff;
+    color: #777;
+}
+
+.download-btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.download-btn::after {
+    background-color: #fff;
+}
+
+.download-btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.download-btn{
+    animation: moveInBottom 0.4s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
